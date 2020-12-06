@@ -21,7 +21,7 @@ def getStockData(Co_info):
             tmpData = my_share.get_historical(share.PERIOD_TYPE_MONTH,120,share.FREQUENCY_TYPE_WEEK,1)
             tmpData["timestamp"]=[datetime.fromtimestamp(i/1000) for i in tmpData["timestamp"]]
             tmpDf=pd.DataFrame(data=tmpData)
-            tmpDf["co_code"]=Co_info[i][0]
+            tmpDf["code"]=Co_info[i][0]
             stockData[Co_info[i][0]]=tmpDf
             print(datetime.now(pytz.timezone('Asia/Tokyo')).strftime('%T'),i,Co_info[i][0],Co_info[i][1])
             time.sleep(5)
