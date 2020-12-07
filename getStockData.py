@@ -58,4 +58,4 @@ def readCo_info(Co_infoPath):
 
 #実行部
 Co_info=readCo_info(Co_infoPath=r"Co_info.csv")
-run(Co_info[0:2],exportFile=r"output")
+run(Co_info,exportFile=r"output")
